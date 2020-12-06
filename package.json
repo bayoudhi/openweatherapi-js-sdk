@@ -1,8 +1,8 @@
 {
   "name": "openweatherapi-js-sdk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "OpenWeatherMap.org Javascript SDK",
-  "main": "./lib/index.js",  
+  "main": "./lib/index.js",
   "scripts": {
     "test": "jest",
     "test:ci": "jest --coverage",
