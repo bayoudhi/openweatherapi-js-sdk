@@ -4,7 +4,8 @@
   "description": "OpenWeatherMap.org Javascript SDK",
   "main": "./src/index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:ci": "jest --coverage"
   },
   "author": "Hamza MEHRI",
   "license": "MIT",
