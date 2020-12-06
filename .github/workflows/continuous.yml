@@ -1,4 +1,4 @@
-name: "🧪 build and test"
+name: "🧪 test"
 
 on:
     push:
@@ -11,7 +11,7 @@ on:
 
 jobs:
     build:
-        name: 🧪 build
+        name: 🧪 test
         runs-on: ubuntu-18.04
         steps:
             - name: 📚 checkout

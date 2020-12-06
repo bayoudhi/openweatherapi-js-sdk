@@ -2,15 +2,18 @@
   "name": "openweatherapi-js-sdk",
   "version": "1.0.0",
   "description": "OpenWeatherMap.org Javascript SDK",
-  "main": "./src/index.js",
+  "main": "./lib/index.js",  
   "scripts": {
     "test": "jest",
-    "test:ci": "jest --coverage"
+    "test:ci": "jest --coverage",
+    "build": "webpack"
   },
   "author": "Hamza MEHRI",
   "license": "MIT",
   "devDependencies": {
-    "jest": "^26.6.3"
+    "jest": "^26.6.3",
+    "webpack": "^5.10.0",
+    "webpack-cli": "^4.2.0"
   },
   "dependencies": {
     "axios": "^0.21.0",
