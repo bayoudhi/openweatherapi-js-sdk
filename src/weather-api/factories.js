@@ -1,6 +1,6 @@
 /**
  *
- * @param {object} deps Dependencies
+ * @param {Object} deps Dependencies
  * @param {Object} params Params
  * @param {string} params.cityName City name
  * @param {string} params.stateCode State code
@@ -29,7 +29,7 @@ module.exports.getWeatherByCityName = async (
 
 /**
  *
- * @param {object} deps Dependencies
+ * @param {Object} deps Dependencies
  * @param {Object} params Params
  * @param {number} params.cityId City ID List of city ID 'city.list.json.gz' can be downloaded here http://bulk.openweathermap.org/sample/.
  * @param {string} params.lang
@@ -56,7 +56,7 @@ module.exports.getWeatherByCityId = async (
 
 /**
  *
- * @param {object} deps Dependencies
+ * @param {Object} deps Dependencies
  * @param {Object} params Params
  * @param {number} params.latitude Geographical coordinates (latitude, longitude)
  * @param {number} params.longitude Geographical coordinates (latitude, longitude)
@@ -88,7 +88,7 @@ module.exports.getWeatherByGeo = async (
 
 /**
  *
- * @param {object} deps Dependencies
+ * @param {Object} deps Dependencies
  * @param {Object} params Params
  * @param {number} params.zipCode Zip code
  * @param {string} params.countryCode Country code

@@ -7,37 +7,77 @@ const {
   getWeatherByZipCode,
 } = require("./factories");
 
-const createAPI = (apiKey) => ({
-  getWeatherByCityName: partial(getWeatherByCityName, [
-    {
-      axios,
-      apiKey,
-      endpoint: "https://api.openweathermap.org/data/2.5/weather",
-    },
-  ]),
-  getWeatherByCityId: partial(getWeatherByCityId, [
-    {
-      axios,
-      apiKey,
-      endpoint: "https://api.openweathermap.org/data/2.5/weather",
-    },
-  ]),
-  getWeatherByGeo: partial(getWeatherByGeo, [
-    {
-      axios,
-      apiKey,
-      endpoint: "https://api.openweathermap.org/data/2.5/weather",
-    },
-  ]),
-  getWeatherByZipCode: partial(getWeatherByZipCode, [
-    {
-      axios,
-      apiKey,
-      endpoint: "https://api.openweathermap.org/data/2.5/weather",
-    },
-  ]),
+/**
+ * createAPI
+ * @param {string} apiKey API KEY
+ */
+module.exports.createAPI = (apiKey) => ({
+  /**
+   * @param {Object} params Params
+   * @param {string} params.cityName City name
+   * @param {string} params.stateCode State code
+   * @param {string} params.countryCode Country code
+   * @param {string} params.lang
+   * @param {string} params.units must one of 'standard', 'imperial' or 'metric'
+   * @returns {Promise}
+   */
+  getWeatherByCityName: (params) =>
+    getWeatherByCityName(
+      {
+        axios,
+        apiKey,
+        endpoint: "https://api.openweathermap.org/data/2.5/weather",
+      },
+      params
+    ),
+  /**
+   * @param {Object} params Params
+   * @param {number} params.cityId City ID List of city ID 'city.list.json.gz' can be downloaded here http://bulk.openweathermap.org/sample/.
+   * @param {string} params.lang
+   * @param {string} params.units must one of 'standard', 'imperial' or 'metric'
+   * @returns {Promise}
+   */
+  getWeatherByCityId: (params) =>
+    getWeatherByCityId(
+      {
+        axios,
+        apiKey,
+        endpoint: "https://api.openweathermap.org/data/2.5/weather",
+      },
+      params
+    ),
+  /**
+   * @param {Object} params Params
+   * @param {number} params.latitude Geographical coordinates (latitude, longitude)
+   * @param {number} params.longitude Geographical coordinates (latitude, longitude)
+   * @param {string} params.lang
+   * @param {string} params.units must one of 'standard', 'imperial' or 'metric'
+   * @returns {Promise}
+   */
+  getWeatherByGeo: (params) =>
+    getWeatherByGeo(
+      {
+        axios,
+        apiKey,
+        endpoint: "https://api.openweathermap.org/data/2.5/weather",
+      },
+      params
+    ),
+  /**
+   * @param {Object} params Params
+   * @param {number} params.zipCode Zip code
+   * @param {string} params.countryCode Country code
+   * @param {string} params.lang
+   * @param {string} params.units must one of 'standard', 'imperial' or 'metric'
+   * @returns {Promise}
+   */
+  getWeatherByZipCode: (params) =>
+    getWeatherByZipCode(
+      {
+        axios,
+        apiKey,
+        endpoint: "https://api.openweathermap.org/data/2.5/weather",
+      },
+      params
+    ),
 });
-
-module.exports = createAPI;
-
-module.exports.default = createAPI;
