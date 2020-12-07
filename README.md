@@ -12,10 +12,10 @@ Using npm:
 
 ```javascript
     // using npm
-	npm install openweatherapi-js-sdk --save
+    npm install openweatherapi-js-sdk --save
 
-	// using yarn
-	yarn add openweatherapi-js-sdk
+    // using yarn
+    yarn add openweatherapi-js-sdk
 
 ```
 
