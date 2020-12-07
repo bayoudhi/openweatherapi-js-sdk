@@ -1,27 +1,27 @@
 name: "🧪 test"
 
 on:
-    push:
-        branches:
-          - '*'
-          - '!master'
-    pull_request:
-        branches:
-          - 'master'
+  push:
+    branches:
+      - "*"
+      - "!master"
+  pull_request:
+    branches:
+      - "master"
 
 jobs:
-    build:
-        name: 🧪 test
-        runs-on: ubuntu-18.04
-        steps:
-            - name: 📚 checkout
-              uses: actions/checkout@v2
-            - name: 🟢 node
-              uses: actions/setup-node@v1
-              with:
-                  node-version: '12.x'
-                  registry-url: https://registry.npmjs.org
-            - name: 📦 install
-              run: npm install
-            - name: 🧪 test
-              run: npm run test:ci            
+  build:
+    name: 🧪 test
+    runs-on: ubuntu-18.04
+    steps:
+      - name: 📚 checkout
+        uses: actions/checkout@v2
+      - name: 🟢 node
+        uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+          registry-url: https://registry.npmjs.org
+      - name: 📦 install
+        run: npm install
+      - name: 🧪 test
+        run: npm run test:ci
