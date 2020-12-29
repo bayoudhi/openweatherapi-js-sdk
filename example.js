@@ -1,12 +1,15 @@
-const { createForecastAPI } = require('./src/index');
+const { createAPI } = require('./src/index');
 
 // SET YOUR API KEY HERE
 const API_KEY = '';
 
-const forecastAPI = createForecastAPI(API_KEY);
+const api = createAPI(API_KEY);
 
-forecastAPI.getForecastByCityName({
+
+
+api.forecast.getForecastByCityName({
     cityName: 'Paris',
     units: 'metric',
     lang: 'fr'
 }).then(result => console.log(result)).catch(error => console.error(error));
+

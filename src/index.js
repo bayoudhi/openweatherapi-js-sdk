@@ -11,3 +11,8 @@ module.exports = {
    */
   createForecastAPI
 };
+
+module.exports.createAPI = (apiKey) => ({
+  weather: createWeatherAPI(apiKey),
+  forecast: createForecastAPI(apiKey)
+});
