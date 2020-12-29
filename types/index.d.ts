@@ -1,3 +1,5 @@
-import createAPI_1 = require("./weather-api");
-import createAPI = createAPI_1.createAPI;
-export { createAPI as createWeatherAPI };
+import createWeatherAPI_1 = require("./weather-api");
+import createWeatherAPI = createWeatherAPI_1.createAPI;
+import createForecastAPI_1 = require("./forecast-api");
+import createForecastAPI = createForecastAPI_1.createAPI;
+export { createWeatherAPI, createForecastAPI };
