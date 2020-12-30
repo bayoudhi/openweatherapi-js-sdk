@@ -1,55 +1,15 @@
 export function createAPI(apiKey: any): {
     weather: {
-        getWeatherByCityName: (params: {
-            cityName: string;
-            stateCode?: string;
-            countryCode?: string;
-            lang?: string;
-            units?: string;
-        }) => Promise<any>;
-        getWeatherByCityId: (params: {
-            cityId: number;
-            lang?: string;
-            units?: string;
-        }) => Promise<any>;
-        getWeatherByGeo: (params: {
-            latitude: number;
-            longitude: number;
-            lang?: string;
-            units?: string;
-        }) => Promise<any>;
-        getWeatherByZipCode: (params: {
-            zipCode: number;
-            countryCode?: string;
-            lang?: string;
-            units?: string;
-        }) => Promise<any>;
+        getWeatherByCityName: (params: import("./weather-api/factories").GetWeatherByCityNameOptions) => Promise<any>;
+        getWeatherByCityId: (params: import("./weather-api/factories").GetWeatherByCityIdOptions) => Promise<any>;
+        getWeatherByGeo: (params: import("./forecast-api/factories").GetForecastByGeoOptions) => Promise<any>;
+        getWeatherByZipCode: (params: import("./weather-api/factories").GetWeatherByGeoOptions) => Promise<any>;
     };
     forecast: {
-        getForecastByCityName: (params: {
-            cityName: string;
-            stateCode?: string;
-            countryCode?: string;
-            lang?: string;
-            units?: string;
-        }) => Promise<any>;
-        getForecastByCityId: (params: {
-            cityId: number;
-            lang?: string;
-            units?: string;
-        }) => Promise<any>;
-        getForecastByGeo: (params: {
-            latitude: number;
-            longitude: number;
-            lang?: string;
-            units?: string;
-        }) => Promise<any>;
-        getForecastByZipCode: (params: {
-            zipCode: number;
-            countryCode?: string;
-            lang?: string;
-            units?: string;
-        }) => Promise<any>;
+        getForecastByCityName: (params: import("./forecast-api/factories").GetForecastByCityNameOptions) => Promise<any>;
+        getForecastByCityId: (params: import("./forecast-api/factories").GetForecastByCityIdOptions) => Promise<any>;
+        getForecastByGeo: (params: import("./forecast-api/factories").GetForecastByGeoOptions) => Promise<any>;
+        getForecastByZipCode: (params: import("./forecast-api/factories").GetForecastByZipCodeOptions) => Promise<any>;
     };
 };
 import createWeatherAPI_1 = require("./weather-api");

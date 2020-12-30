@@ -1,12 +1,43 @@
 /**
+ * @typedef DefaultDependencies
+ * @type {Object}
+ * @property {Object} axios - Axios instance
+ * @property {string} endpoint - Endpoint
+ * @property {string} apiKey - API Key
+ * 
+ * @typedef GetWeatherByCityNameOptions
+ * @type {Object}
+ * @property {string} cityName - City name
+ * @property {string=} stateCode - State code
+ * @property {string=} countryCode - Country code
+ * @property {string=} lang
+ * @property {string=} units - must one of 'standard', 'imperial' or 'metric'
+ * 
+ * @typedef GetWeatherByCityIdOptions
+ * @type {Object}
+ * @property {number} cityId - City ID List of city ID 'city.list.json.gz' can be downloaded here http://bulk.openweathermap.org/sample/.
+ * @property {string=} lang
+ * @property {string=} units - must be one of 'standard', 'imperial' or 'metric'
+ *
+ * @typedef GetWeatherByGeoOptions
+ * @type {Object}
+ * @property {number} latitude - Geographical coordinates (latitude, longitude)
+ * @property {number} longitude - Geographical coordinates (latitude, longitude)
+ * @property {string=} lang
+ * @property {string=} units - must be one of 'standard', 'imperial' or 'metric'
+ * 
+ * @typedef GetWeatherByZipCodeOptions
+ * @type {Object}
+ * @property {number} zipCode - Zip code
+ * @property {string=} countryCode - Country code
+ * @property {string=} lang
+ * @property {string=} units - must be one of 'standard', 'imperial' or 'metric'
+ */
+
+/**
  * Get weather by city name
- * @param {Object} deps - Dependencies
- * @param {Object} params - Params
- * @param {string} params.cityName - City name
- * @param {string=} params.stateCode - State code
- * @param {string=} params.countryCode - Country code
- * @param {string=} params.lang
- * @param {string=} params.units - must one of 'standard', 'imperial' or 'metric'
+ * @param {DefaultDependencies} deps - Dependencies
+ * @param {GetWeatherByCityNameOptions} params - Params
  */
 module.exports.getWeatherByCityName = async (
   { axios, endpoint, apiKey },
@@ -29,11 +60,8 @@ module.exports.getWeatherByCityName = async (
 
 /**
  * Get weather by city id
- * @param {Object} deps - Dependencies
- * @param {Object} params - Params
- * @param {number} params.cityId - City ID List of city ID 'city.list.json.gz' can be downloaded here http://bulk.openweathermap.org/sample/.
- * @param {string=} params.lang
- * @param {string=} params.units - must be one of 'standard', 'imperial' or 'metric'
+ * @param {DefaultDependencies} deps - Dependencies
+ * @param {GetWeatherByCityIdOptions} params - Params
  */
 module.exports.getWeatherByCityId = async (
   { axios, endpoint, apiKey },
@@ -56,12 +84,8 @@ module.exports.getWeatherByCityId = async (
 
 /**
  * Get weather by geo
- * @param {Object} deps - Dependencies
- * @param {Object} params - Params
- * @param {number} params.latitude - Geographical coordinates (latitude, longitude)
- * @param {number} params.longitude - Geographical coordinates (latitude, longitude)
- * @param {string=} params.lang
- * @param {string=} params.units - must be one of 'standard', 'imperial' or 'metric'
+ * @param {DefaultDependencies} deps - Dependencies
+ * @param {GetWeatherByGeoOptions} params - Params
  */
 module.exports.getWeatherByGeo = async (
   { axios, endpoint, apiKey },
@@ -88,12 +112,8 @@ module.exports.getWeatherByGeo = async (
 
 /**
  * Get weather by zip code
- * @param {Object} deps - Dependencies
- * @param {Object} params - Params
- * @param {number} params.zipCode - Zip code
- * @param {string=} params.countryCode - Country code
- * @param {string=} params.lang
- * @param {string=} params.units - must be one of 'standard', 'imperial' or 'metric'
+ * @param {DefaultDependencies} deps - Dependencies
+ * @param {GetWeatherByZipCodeOptions} params - Params
  */
 module.exports.getWeatherByZipCode = async (
   { axios, endpoint, apiKey },

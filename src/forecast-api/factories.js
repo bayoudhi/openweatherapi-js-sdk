@@ -1,12 +1,43 @@
 /**
+ * @typedef DefaultDependencies
+ * @type {Object}
+ * @property {Object} axios - Axios instance
+ * @property {string} endpoint - Endpoint
+ * @property {string} apiKey - API Key
+ * 
+ * @typedef GetForecastByCityNameOptions
+ * @type {Object}
+ * @property {string} cityName - City name
+ * @property {string=} stateCode - State code
+ * @property {string=} countryCode - Country code
+ * @property {string=} lang
+ * @property {string=} units - must one of 'standard', 'imperial' or 'metric'
+ * 
+ * @typedef GetForecastByCityIdOptions
+ * @type {Object}
+ * @property {number} cityId - City ID List of city ID 'city.list.json.gz' can be downloaded here http://bulk.openweathermap.org/sample/.
+ * @property {string=} lang
+ * @property {string=} units - must be one of 'standard', 'imperial' or 'metric'
+ *
+ * @typedef GetForecastByGeoOptions
+ * @type {Object}
+ * @property {number} latitude - Geographical coordinates (latitude, longitude)
+ * @property {number} longitude - Geographical coordinates (latitude, longitude)
+ * @property {string=} lang
+ * @property {string=} units - must be one of 'standard', 'imperial' or 'metric'
+ * 
+ * @typedef GetForecastByZipCodeOptions
+ * @type {Object}
+ * @property {number} zipCode - Zip code
+ * @property {string=} countryCode - Country code
+ * @property {string=} lang
+ * @property {string=} units - must be one of 'standard', 'imperial' or 'metric'
+ */
+
+/**
  * Get 5 day forecast by city name
- * @param {Object} deps - Dependencies
- * @param {Object} params - Params
- * @param {string} params.cityName - City name
- * @param {string=} params.stateCode - State code
- * @param {string=} params.countryCode - Country code
- * @param {string=} params.lang
- * @param {string=} params.units - must one of 'standard', 'imperial' or 'metric'
+ * @param {DefaultDependencies} deps - Dependencies
+ * @param {GetForecastByCityNameOptions} params - Params
  */
 module.exports.getForecastByCityName = async (
   { axios, endpoint, apiKey },
@@ -27,14 +58,13 @@ module.exports.getForecastByCityName = async (
   return result.data;
 };
 
+
+
 /**
- * Get 5 day forecast by city id
- * @param {Object} deps - Dependencies
- * @param {Object} params - Params
- * @param {number} params.cityId - City ID List of city ID 'city.list.json.gz' can be downloaded here http://bulk.openweathermap.org/sample/.
- * @param {string=} params.lang
- * @param {string=} params.units - must be one of 'standard', 'imperial' or 'metric'
- */
+* Get 5 day forecast by city id
+* @param {DefaultDependencies} deps - Dependencies
+* @param {GetForecastByCityIdOptions} params - Params
+*/
 module.exports.getForecastByCityId = async (
   { axios, endpoint, apiKey },
   { cityId, lang, units }
@@ -56,12 +86,8 @@ module.exports.getForecastByCityId = async (
 
 /**
  * Get 5 day forecast by geo
- * @param {Object} deps - Dependencies
- * @param {Object} params - Params
- * @param {number} params.latitude - Geographical coordinates (latitude, longitude)
- * @param {number} params.longitude - Geographical coordinates (latitude, longitude)
- * @param {string=} params.lang
- * @param {string=} params.units - must be one of 'standard', 'imperial' or 'metric'
+ * @param {DefaultDependencies} deps - Dependencies
+ * @param {GetForecastByGeoOptions} params - Params
  */
 module.exports.getForecastByGeo = async (
   { axios, endpoint, apiKey },
@@ -88,12 +114,8 @@ module.exports.getForecastByGeo = async (
 
 /**
  * Get 5 day forecast by zip code
- * @param {Object} deps - Dependencies
- * @param {Object} params - Params
- * @param {number} params.zipCode - Zip code
- * @param {string=} params.countryCode - Country code
- * @param {string=} params.lang
- * @param {string=} params.units - must be one of 'standard', 'imperial' or 'metric'
+ * @param {DefaultDependencies} deps - Dependencies
+ * @param {GetForecastByZipCodeOptions} params - Params
  */
 module.exports.getForecastByZipCode = async (
   { axios, endpoint, apiKey },

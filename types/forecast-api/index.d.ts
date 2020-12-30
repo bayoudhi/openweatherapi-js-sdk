@@ -1,62 +1,26 @@
 export function createAPI(apiKey: string): {
     /**
      * @function
-     * @param {Object} params - Params
-     * @param {string} params.cityName - City name
-     * @param {string=} params.stateCode - State code
-     * @param {string=} params.countryCode - Country code
-     * @param {string=} params.lang
-     * @param {string=} params.units - must be one of 'standard', 'imperial' or 'metric'
+     * @param {import("./factories").GetForecastByCityNameOptions} params - Params
      * @returns {Promise}
      */
-    getForecastByCityName: (params: {
-        cityName: string;
-        stateCode?: string | undefined;
-        countryCode?: string | undefined;
-        lang?: string | undefined;
-        units?: string | undefined;
-    }) => Promise<any>;
+    getForecastByCityName: (params: import("./factories").GetForecastByCityNameOptions) => Promise<any>;
     /**
      * @function
-     * @param {Object} params - Params
-     * @param {number} params.cityId - City ID List of city ID 'city.list.json.gz' can be downloaded here http://bulk.openweathermap.org/sample/.
-     * @param {string=} params.lang
-     * @param {string=} params.units - must be one of 'standard', 'imperial' or 'metric'
+     * @param {import("./factories").GetForecastByCityIdOptions} params - Params
      * @returns {Promise}
      */
-    getForecastByCityId: (params: {
-        cityId: number;
-        lang?: string | undefined;
-        units?: string | undefined;
-    }) => Promise<any>;
+    getForecastByCityId: (params: import("./factories").GetForecastByCityIdOptions) => Promise<any>;
     /**
      * @function
-     * @param {Object} params - Params
-     * @param {number} params.latitude - Geographical coordinates (latitude, longitude)
-     * @param {number} params.longitude - Geographical coordinates (latitude, longitude)
-     * @param {string=} params.lang
-     * @param {string=} params.units - must be one of 'standard', 'imperial' or 'metric'
+     * @param {import("./factories").GetForecastByGeoOptions} params - Params
      * @returns {Promise}
      */
-    getForecastByGeo: (params: {
-        latitude: number;
-        longitude: number;
-        lang?: string | undefined;
-        units?: string | undefined;
-    }) => Promise<any>;
+    getForecastByGeo: (params: import("./factories").GetForecastByGeoOptions) => Promise<any>;
     /**
      * @function
-     * @param {Object} params - Params
-     * @param {number} params.zipCode - Zip code
-     * @param {string=} params.countryCode - Country code
-     * @param {string=} params.lang
-     * @param {string=} params.units - must be one of 'standard', 'imperial' or 'metric'
+     * @param {import("./factories").GetForecastByZipCodeOptions} params - Params
      * @returns {Promise}
      */
-    getForecastByZipCode: (params: {
-        zipCode: number;
-        countryCode?: string | undefined;
-        lang?: string | undefined;
-        units?: string | undefined;
-    }) => Promise<any>;
+    getForecastByZipCode: (params: import("./factories").GetForecastByZipCodeOptions) => Promise<any>;
 };
