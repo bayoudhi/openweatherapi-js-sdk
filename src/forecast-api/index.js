@@ -49,7 +49,7 @@ module.exports.createAPI = (apiKey) => ({
       {
         axios,
         apiKey,
-        endpoint: "https://api.openweathermap.org/data/2.5/weather",
+        endpoint: "https://api.openweathermap.org/data/2.5/forecast",
       },
       params
     ),
@@ -63,7 +63,7 @@ module.exports.createAPI = (apiKey) => ({
       {
         axios,
         apiKey,
-        endpoint: "https://api.openweathermap.org/data/2.5/weather",
+        endpoint: "https://api.openweathermap.org/data/2.5/forecast",
       },
       params
     ),
